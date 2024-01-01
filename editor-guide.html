@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Heptaveegesimal</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="style_base.css" rel="stylesheet" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<!--- Head Of Page --->
+	<div class="topbar">
+		<noscript>
+			<div class="nojs" style="padding: 3px">
+				<center>
+					Javascript is disabled or not supported by this browser, this site will only be partially functional!
+				</center>
+			</div>
+		</noscript>
+		<div class="topbar-inner">
+		<table id="topbar-1" style="width:100%"><tr><td>
+			<table><tr id="topbarDyn"><td style="padding-right: 3px">
+				<div class="dropdown" id="tbarcont-home">
+					<a class="btnlink" href="https://heptaveegesimal.com/">Home</a>
+				</div>
+			</table>
+		<td style="padding-right: 3px">
+			<table style="float: right; display: inline-block;"><tr><td style="padding-right: 3px">
+				<div id="tbarcont-about">
+					<a class="btnlink" href="https://heptaveegesimal.com/about.html">About</a>
+				</div>
+			</table>
+		</table>
+		<table style="width:100%" id="topbar-2" class="hide"></table>
+		<table style="width:100%" id="topbar-3" class="hide"></table>
+		<table style="width:100%" id="topbar-4" class="hide"></table>
+		<table style="width:100%" id="topbar-5" class="hide"></table>
+		</div>
+	</div>
+	<div class="topline"></div>
+	<!--- Actual Page Content --->
+	<div class="normalText extraMargin">
+		<div class="vscroll">
+
+<center><h1>Minesveeper Custom Setting Editor Guide</h1></center>
+<!--<h3>You may:</h3>-->
+
+Welcome to the editor guide here I will give you some tips for creating your own settings.
+I will first cover the standard edit page and how you can adjust settings there.
+Afterwards I will give you hints for how to write settings directly in the JSON format, which allows for some advanced mechanics including copying mechanics from other days.
+<br><br>
+<h3>Edit Mode</h3>
+In the editor you will see the board with its relative mine probabilities at the top.
+You can click tiles to add or remove them from the shape and you can select the mine probability you want to set in the table below.
+Note that this view only supports a specific selection of probabilities.
+How to set more nuanced probabilities will be explained later.
+Though those don't have specific textures in the view.
+<br><br>
+When you want to change the board size you have to select how the board is upscaled or downscaled to the new size.
+Afterwards click "Apply" to set the new size.
+<br><br>
+When selecting the number of mines you want make sure that it is compatible with the board.
+There should be sufficient tiles capable of generating mines, so that no matter what tile the player starts on all mines can generate on tiles with at least moderate probabilities.
+<br><br>
+Selecting the topology will define how the edges of your board are connected.
+Note that when using a Real Projective Plane the corners of the board may work improperly I would recommend leaving out a 2 by 2 section in each corner.
+<br><br>
+The Display Style section lets you select how tiles are drawn. 
+<ul>
+	<li><b>Default</b> leads to standard numbering according to the number of surrounding mines irregardless of color.
+	<li><b>Colorcharge</b> gives you numbers according to the colors of mines.
+	<li><b>R - (G + B)</b> will display the regular numbers and will count red mines like usual. Green and Blue mines are however subtracted, this option mainly serves to allow people to replicate anti mines from the 2018 advent calendar.
+</ul>
+The option "Decrementing" can be set independently of the selected mode and determines if surrounding flags should be subtracted in the display.<br>
+Finally the option "Gray Mines", is only relevant when you lose the game and determines if mines are drawn in gray or in their respective color.
+This option will likely make sense to leave on when you only have mines of one color. 
+<br><br>
+The Neighborhood option lets you specify in what range small and large mines are counted.
+Note that when you discover a tile with no surrounding mines, all tiles that are in both the small <b>and</b> large mine neighborhood are automatically opened.
+I really want to clarify the <b>and</b> here, a tile in only one of those two will not be automatically opened.
+It may thus make sense to adjust both options even if you only use one size of mines.
+For example: If you only use large mines it is advised to increase the size of small mines to that of large mines too.
+A gray circle around the eye indicates that the eye tile would count a mine on that tile as usual.
+In addition you can select a red green or blue circle for how mines are counted.
+In that case a mine on that tile would always be counted as a mine of that color.
+This option of course only makes sense to use in colorcharge mode or R - (G + B) mode.
+<br><br>
+In the animal section you can select which of the four animals you want to include in the game.
+Yes Four! The rat who so far only made an appearance in 2018 is here too.
+I wanted to make a day with the rat in this one too.
+However, I could not find a setting in which the rat would work well.
+So now the rat is just here for customization.
+<br>
+Unlike 2018 where the sheep's presence automatically disabled chording, this is now a separate option and you can toggle it independently.
+<br><br>
+Finally this time around you can give a title to the setting you've made as well as attach you name and write up your own description for people playing it.
+<br><br>
+<h3>JSON Mode</h3>
+Now to the more advanced JSON editor.
+Here you only get a textbox with the <a href="https://www.json.org">JSON</a> representation of your setting. Everything you did before is automatically translated into this format.<br>
+Please note a view things about this:
+<ul>
+	<li>All indentation is visual, when a setting is uploaded it will be uploaded without it and switching between modes will reset the indentation.
+	<li>We are stuck with all the pedantic rules of JSON. So no trailing commas in arrays and all dictionary keys will need quotation marks. As much as much as I would like to allow these. I am not writing my own JSON parser for this and I will not use an eval() instead.
+	<li>If your setting cannot be deserialized the editor will prevent you from leaving the JSON view. So make sure to only use this mode if you know how to write valid JSON.
+	<li>Finally it is possible to create corrupted settings which are not playable and will cause an error. So make sure you define the JSON in a reasonable structure and that your setting is actually playable. It is recommended to check the browser console to see if there are any errors. If you can play your setting without seeing any errors pop up your setting should be good. 
+</ul>
+<br><br>
+So why would you choose this editor over the normal one. There are a few things you can do here that you couldn't do before:
+<br><br>
+Do you want a better editor for the board.
+Well now you can use any image editor of your choice.<br>
+Simply download <a href="https://heptaveegesimal.com/resources/phps/Download_File_By_Id.php?id=17" class="downloadlink">This Python Script</a> for converting an image to a board.<br>
+Attached are some example images, red correspond to there not being a tile on that pixel while a grayscale value corresponds to a tile with a corresponding relative mine probability.
+A perfectly black tile will never generate a mine while a white tile has a maximum relative mine probability.
+A typical board will have mostly white tiles with some adjusted mine probabilities where appropriate.
+You can then run the python script providing the image as the first argument and it will generate the corresponding Base64 code.
+Keep in mind to also adjust the width and height of the board as the Base64 code does not include this information.<br>
+Bonus tip: You can use the code <span class="code">P8</span> to fill up an arbitrary size board with tiles of a maximum relative mine probability (in case you don't need anything more detailed).
+<br><br>
+The neighborhood is defined for small and large mines by listing each relative position in which a mine is counted.
+With each position you can also provide a third argument.
+If you use a string you can specify the color in which a mine is counted <span class="code">[0, -1, "r"]</span> indicates that the mine above will always be treated like a red mine irregardless of its actual color.
+You may even use a dictionary to map the true color of the mine to how it is counted.
+<span class="code">[1,0,{"r":"rr","g":"b","b":"g"}]</span> refers to the tile one to the right.
+Here a red mine would be counted double while a green mine would be counted as blue and a blue mine would be counted as a green mine.
+Here normal mines are treated as lowercase letters and large mines as uppercase letters the keys in the dictionary should instead be uppercase when defined fo large mines.
+The secret Minesveeper Variant used this notation <span class="code">{"R":"","G":"G","B":""}</span> to only count large green mines on some tiles.
+<br>
+Though be careful that you don't create settings where a chain reaction from an empty tile can set off a mine.
+The overlap between the small and large mine neighborhood should not include a tile where a mine could be missed.
+<br><br>
+Would you like to experiment with some more unique mechanics from one of the days.
+Like the memorization from Minesveeper 47 or do you want mines to generate in stripes like during Minesveeper 50.
+This time you can do so, through specifying that you want to copy a mechanic from another day.<br>
+Any value in the JSON can be replaced with a string like <span class="code">"copyFrom:47"</span> in which case the corresponding value in the JSON would be copied from that days settings.
+This way you can "steal" mechanics from other days.
+A Minesveeper 47 replica could be made by including <span class="code">"preDigFunction":"copyFrom:47"</span> and <span class="code">"postFlagFunction":"copyFrom:47"</span> in the JSON.
+<br><br>
+Warning some of these mechanics you can copy do however make certain assumptions about the board or types of mines.
+Using these mechanics under wrong conditions may break the game in various ways.
+Making a Day 42 replica where the top and left side don't have a mine probability of zero can result in you instantly loosing the game as those tiles are automatically opened.
+<br><br>
+If you want to start by modifying another day, I have remade many variants and uploaded them under the following custom links:<br>
+<a href="https://heptaveegesimal.com/2023/advent-calendar?c=Day_00">https://heptaveegesimal.com/2023/advent-calendar?c=Day_00</a><br>
+<a href="https://heptaveegesimal.com/2023/advent-calendar?c=Day_01">https://heptaveegesimal.com/2023/advent-calendar?c=Day_01</a><br>
+...<br>
+<a href="https://heptaveegesimal.com/2023/advent-calendar?c=Day_38">https://heptaveegesimal.com/2023/advent-calendar?c=Day_38</a><br>
+<a href="https://heptaveegesimal.com/2023/advent-calendar?c=Day_39">https://heptaveegesimal.com/2023/advent-calendar?c=Day_39</a><br>
+...<br>
+<a href="https://heptaveegesimal.com/2023/advent-calendar?c=Day_60">https://heptaveegesimal.com/2023/advent-calendar?c=Day_60</a><br>
+You can probably figure out the rest of the links, though this does not include any past variants that could not be plausibly be remade with this. Also the one secret variant has a link along the lines of D_??_?.
+<br><br>
+Are you tired of having to copy paste the same thing over and over again.
+Let's say you have made an object that counts red mines normally, green mines as double mines and blue mines as tripple mines so you write something like <span class="code">{"r":"r","g":"rr","b":"rrr"}</span> though now you have to apply this to every tile in the neighborhood.
+You can instead define a constant.
+Simply define the key <span class="code">constants</span> directly in the settings as an object, eg: <span class="code">"constants" : {"myval" : {"r":"r","g":"rr","b":"rrr"}}</span>.
+In here you can define any key/value pair.
+Every time the key is used as a string value in the rest of the settings, it will instead be replaced with the value you have set in the constants.<br>
+In the neighborhood for mines you may for example now write: <span class="code">[[-1,-1,"myval"],[-1,0,"myval"],[-1,1,"myval"],[0,-1,"myval"],[0,1,"myval"],[1,-1,"myval"],[1,0,"myval"],[1,1,"myval"]]</span>
+<br><br>
+When defining the "shape", there are some additional options which can be defined besides "small" and "large".
+<ul>
+	<li><b>dogEffect</b> defines what positions relative to the dog are turned to grayscale tiles
+	<li><b>dogCount</b> defines on what surrounding tiles, grayscale tiles count mines
+	<li><b>autoDig</b> adds an additional restriction on which tiles will be automatically opened when an empty tile is encountered. This can be usefull when you have made small and large mine behaviours that can lead to chain reactions loosing the game otherwise
+</ul>
+For all three of these only the positions matter, a third parameter will be ignored.
+<br><br>
+<h3>Uploading Your Setting</h3>
+When you open the play menu with a setting you just made you will need to start a game to verify that your setting is in fact able to generate.
+After that you will see an Upload button, here you will need to agree to the <a href="rules-and-data-policy.html">Rules and Data Policy</a> make sure that you read and understand those.
+Once you have successfully uploaded your setting, you will get a link with which you can share it.
+
+<br><br><br>
+I got it now take me back to the advent calendar: <a href="index.php" class="buttonlink">Click Here!</a><br><br>
+		</div>
+	</div>
+	<!--- Scripts --->
+	<script language="javascript" type="text/javascript" src="../../menu.js"></script>
+	</body>
+</html>

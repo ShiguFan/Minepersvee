@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64mm"
+   height="64mm"
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="Download.svg"
+   inkscape:export-filename="/home/joshua/Projects/Websites/Heptaveegesimal_PHP/2023/advent-calendar/images/misc/Download_Gray.png"
+   inkscape:export-xdpi="129.35001"
+   inkscape:export-ydpi="129.35001"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="4.1423828"
+     inkscape:cx="120.94488"
+     inkscape:cy="151.84497"
+     inkscape:window-width="1874"
+     inkscape:window-height="1052"
+     inkscape:window-x="46"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid824" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#2e2e2e;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 31.75,42.333332 43.65625,30.427083 h -7.9375 l 0,-19.84375 h -7.9375 l 0,19.84375 h -7.9375 z"
+       id="path1148"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:#2e2e2e;stroke:none;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 17.197917,44.979167 29.104166,-10e-7 c 2.38125,10e-7 3.96875,-1.587499 3.96875,-3.96875 V 35.71875 l 6.614584,0 v 7.9375 c 0,5.291667 -2.645834,7.9375 -7.9375,7.9375 H 14.552083 c -5.2916663,0 -7.9374997,-2.645833 -7.9374997,-7.9375 v -7.9375 h 6.6145837 l 0,5.291667 c 0,2.116666 1.852083,3.96875 3.96875,3.96875 z"
+       id="path2433"
+       sodipodi:nodetypes="ccccccccccccc" />
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+Mechanics:
+
+- Custom Board Shapes (Minesveeper Zero)
+- Large Mines
+    - Increment tiles in a 5x5 area
+- Color Charge
+- Dog + Bone
+    - Similar movement to the Rat + Cheese Mechanic
+    - Can set of mines
+    - Turns surrounding 5 x 5 area to regular counting, with all numbers gray (Discards color charge and large mine radius)
+    - Sheep wont move if it is adjacent to the dog
+- Horse
+    - Similat movement to the Sheep
+    - Can set of mines
+    - Will jump over one flagged tile (Irregeardless of if the flag is correct)
+    - Will turn a 5 x 5 area to knightsweeper counting (Keeps colorcharge, discards large mines)
+    - Shape takes priority over the dog, but colorblindness still aplies
+
+
+Days:
+
+38 [1] - Reintroduction (Small board with cut off corners)
+39 [2] - _(Larger irregular board)
+40 [3] - RGB (Disjoint letters, no color charge effect yet)
+41 [4] - Large Mines
+42 [5] - Accumulated Values of each row and columns on the side + decrementing
+43 [6] - Everyones favourite mechanic even better (Knights path but with a few large mines mixed in)
+44 [7] - Heavy torus (Half/Half normal and large mines on a torus)
+45 [8] - Making cyan (Blue and Green mines mixed)
+46 [9] - Color charge (All 3 color mines)
+47 [10] - Memorization (Day 1 board, but numbers only show up for one click)
+48 [11] - Dog (Normal + Large Mines + Dog)
+49 [12] - Red Above, Blue Below
+50 [13] - Advantage of the colorblind (Colorcharge + Dog)
+51 [14] - Neutralization (Colorcharge + Minesveeper 0 decremenenting)
+52 [15] - BAAA (As in RGB, Sheep + Colorcharge)
+53 [16] - Big Blue Bombs (Red + Green Small Mines and large Blue mines)
+54 [17] - Horse
+55 [18] - Going Nuclear (Large Mines have 7x7 or maybe 9x9 area)
+56 [19] - Smelling colors (Rat + colorcharge)
+57 [20] - Ternary Distance Polarisation (Color depends on the distance)
+58 [21] - Sheppard (Dog + Sheep + Mostly large mines)
+59 [22] - A Final Calm Day (Zen Garden + colorcharge)
+60 [23] - Bullet Hell (Sheep but dodge bullets, that move across the screen)
+61 [24] - Customization
+
+62 [25] - RESERVED UNTIL DEZEMBER 2023
+63 [26] - RESERVED UNTIL DEZEMBER 2023
+64 [27] - RESERVED UNTIL DEZEMBER 2023
+65 [28] - RESERVED UNTIL DEZEMBER 2023
+66 [29] - RESERVED UNTIL DEZEMBER 2023
+67 [30] - RESERVED UNTIL DEZEMBER 2023
+68 [31] - RESERVED UNTIL DEZEMBER 2023
+
+69 - [REDACTED FOR THE DOWNLOAD]

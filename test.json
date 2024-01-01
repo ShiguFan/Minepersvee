@@ -1,0 +1,16 @@
+{
+    "title" : "Mystsveeper 1A - Bullet Hell (Extra Stage)",
+    "desc" : "Minesveeper 60 - Bullet Hell, but bullets are spawned independently of your clicks.\nThe longer you take, the more bullets accumulate!",
+    "mines" : {
+        "R" : 40
+    },
+    "grayMines" : true,
+    "display" : "default",
+    "shape" : "default",
+    "decrementing" : false,
+    "x" : 26,
+    "y" : 26,
+    "disableChord" : true,
+    "spawn" : ["sheep"],
+    "board" : "0FSKM/709+f6ACEAEATd5Uw"
+}

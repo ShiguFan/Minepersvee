@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--<?php
+//Lol No
+?>-->
+<html>
+<head>
+	<title>Heptaveegesimal</title>
+	<!-- <? if(false) { ?> -->
+	<link href="style_base.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="style_switch.css" rel="stylesheet" type="text/css" />
+	<link href="style_overlay.css" rel="stylesheet" type="text/css" />
+	<!-- <? } else { echo $htmlClose; ?>
+	<link href="style_base.css?v=<? echo $versionNumber; ?>" rel="stylesheet" type="text/css" />
+	<link href="style.css?v=<? echo $versionNumber; ?>" rel="stylesheet" type="text/css" />
+	<link href="style_switch.css?v=<? echo $versionNumber; ?>" rel="stylesheet" type="text/css" />
+	<link href="style_overlay.css?v=<? echo $versionNumber; ?>" rel="stylesheet" type="text/css" />
+	<? echo $htmlOpen; } ?> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+</head>
+<body>
+	<!--- Head Of Page --->
+	<div class="topbar">
+		<noscript>
+			<div class="nojs" style="padding: 3px">
+				<center>
+					Javascript is disabled or not supported by this browser, this site will only be partially functional!
+				</center>
+			</div>
+		</noscript>
+		<div class="topbar-inner">
+		<table id="topbar-1" style="width:100%"><tr><td>
+			<table><tr id="topbarDyn"><td style="padding-right: 3px">
+				<div class="dropdown" id="tbarcont-home">
+					<a class="btnlink" href="https://heptaveegesimal.com/">Home</a>
+				</div>
+			</table>
+		<td style="padding-right: 3px">
+			<table style="float: right; display: inline-block;"><tr><td style="padding-right: 3px">
+				<div id="tbarcont-about">
+					<a class="btnlink" href="https://heptaveegesimal.com/about.html">About</a>
+				</div>
+			</table>
+		</table>
+		<table style="width:100%" id="topbar-2" class="hide"></table>
+		<table style="width:100%" id="topbar-3" class="hide"></table>
+		<table style="width:100%" id="topbar-4" class="hide"></table>
+		<table style="width:100%" id="topbar-5" class="hide"></table>
+		</div>
+	</div>
+	<div class="topline"></div>
+	<!--- Actual Page Content --->
+	<!-- <? if(false) { ?> -->
+	<span id="loadMetadata" class="hide" version="1" custom="" customx="fiIWsx" customFlags="0"></span>
+	<!-- <? } else { echo $htmlClose; ?>
+	<span id="loadMetadata" class="hide" version="<? echo $versionNumber; ?>" custom="<? echo $customCode; ?>" customFlags="<? echo $customMeta; ?>"></span>
+	<? echo $htmlOpen; } ?> -->
+	<div class="normalText">
+		<div class="vscroll">
+			<center>
+			<table>
+				<tr>
+				<td><button type="button" id="dayButton_1" class="daybutton_active">1A</button>
+				<tr>
+				<td colspan="8"><button type="button" id="settingButton" class="daybutton_active" style="width:602px">Welcome &amp; Settings</button>
+			</table>
+			</center>
+		</div>
+		<div class="vscroll">
+			<center>
+				<h1 id="title_base">Mystsveeper Collection</h1>
+				<h1 id="title_day" class="hide">Mystsveeper ?? - ...</h1>
+				<h1 id="title_patience" class="hide">Uh oh?</h1>
+			</center>
+		</div>
+		<div class="vscroll hide" id="board-section">
+			<center>
+				<table class="vscroll bluetab" style="margin-left:10px; margin-right:10px">
+					<tr>
+					<td class="bluetab">
+						<canvas id="main_canvas" width="322" height="322"></canvas>
+					<td width="200" valign="top" style="position:relative">
+						<div style="margin:7px">
+							<!--- Top Display --->
+							<div style="width:172px;"><center><button type="button" class="hide" id="mobileLR" style="margin-bottom:10px;">Left Click</button></center></div>
+							<div id="count_sec_open">
+								<img src="images/Closed.png"><div id="count_tex_open" style="display:inline; margin-left:7px">...</div>
+								<br>
+							</div>
+							<div id="count_sec_rflag">
+								<img src="images/Flag_R.png"><div id="count_tex_rflag" style="display:inline; margin-left:7px">...</div>
+								<br>
+							</div>
+							<div id="count_sec_rxflag">
+								<img src="images/Flag_RX.png"><div id="count_tex_rxflag" style="display:inline; margin-left:7px">...</div>
+								<br>
+							</div>
+							<div id="count_sec_gflag">
+								<img src="images/Flag_G.png"><div id="count_tex_gflag" style="display:inline; margin-left:7px">...</div>
+								<br>
+							</div>
+							<div id="count_sec_gxflag">
+								<img src="images/Flag_GX.png"><div id="count_tex_gxflag" style="display:inline; margin-left:7px">...</div>
+								<br>
+							</div>
+							<div id="count_sec_bflag">
+								<img src="images/Flag_B.png"><div id="count_tex_bflag" style="display:inline; margin-left:7px">...</div>
+								<br>
+							</div>
+							<div id="count_sec_bxflag">
+								<img src="images/Flag_BX.png"><div id="count_tex_bxflag" style="display:inline; margin-left:7px">...</div>
+								<br>
+							</div>
+						</div>
+						<div style="position:absolute; bottom:0px; left:0px"><div style="margin:7px">
+							<!--- Bottom Text --->
+							<b>Time:<div id="regularTimer" style="font-family:'Courier New'; font-size:20px; margin-left:16px">0:00.000</div></b>
+							<div style="width:172px;"><center><button type="button" class="redbutton" id="restartButton">Restart</button></center></div>
+						</div></div>
+				</table>
+			</center>
+		</div>
+		<br>
+		<div id="Day61Desc" class="hide">
+			<div class="vscroll">
+				<center>	
+					<button type="button" id="db61-play" class="daybutton_active" style="width:100px">Play</button>
+					<button type="button" id="db61-edit" class="daybutton_active" style="width:100px">Edit</button>
+					<button type="button" id="db61-json" class="daybutton_active" style="width:100px">JSON</button>
+				</center>
+				<br>
+			</div>
+			<div class="vscroll">
+				<center>
+					<div class="out_blue" id="secd61-play">
+						<p align="left" id="desc61-text">
+						</p><br>
+						<p align="left">
+							<b>Custom Setting By: <span id="desc61-author"></span></b><br>
+						</p><br>
+						<div class="hide" id="gen-to-share" align="left">
+							Custom settings cannot be uploaded until you verify that your settings are able to generate by starting a game.<br>
+						</div>
+						<div class="hide" id="use-link-to-share" align="left">
+							Share this setting with the following link: <a href="" id="custom-link">Example</a><br>
+						</div>
+						<div class="hide" id="upload-your-setting" align="left">
+							Upload this custom setting in order to share it with others.<br>
+							<input type="checkbox" id="d61-rules">I agree to the <a href="rules-and-data-policy.html">Rules and Data Policy</a> of uploading custom settings<br>
+							<button type="button" class="redbutton" id="share-button">Upload</button>
+							<div id="upload-failed"></div>
+						</div>
+						<center><img src="desc/46_Colorcharge.png" class="hide" id="d61-colorcharge-chart"></center>
+					</div>
+					<div class="out_blue" id="secd61-edit">
+						<table class="bluetab">
+						<tr>
+						<td valign="top">
+							<b>Board Size:<br>
+							X: <input type="number" id="d61-s-x" value="20" min="3"><br>
+							Y: <input type="number" id="d61-s-y" value="20" min="3"><br>
+							Adjust Mode:<br></b>
+							<input type="radio" id="d61-adj-0" name="adjust" value="sample" checked> <label for="c1">Sample</label><br>
+							<input type="radio" id="d61-adj-1" name="adjust" value="extrude"> <label for="c2">Extrude</label><br>
+							<input type="radio" id="d61-adj-2" name="adjust" value="repeat"> <label for="c3">Repeat</label><br>
+							<b>Adjust Direction</b><br>
+							<input type="radio" id="d61-adjd-0" name="adjustdir" value="dr" checked> <label for="c1">Down Right</label><br>
+							<input type="radio" id="d61-adjd-1" name="adjustdir" value="ul"> <label for="c2">Up Left</label><br>
+							<input type="radio" id="d61-adjd-2" name="adjustdir" value="ce"> <label for="c3">Center</label><br>
+							<center><button type="button" class="greenbutton" id="applyShape">Apply</button></center>
+						<td valign="top">
+							<b>Edit Board:<br>
+							<div class="" id="probability-selector">
+								Relative Probability:<br>
+								<canvas id="prob_canvas" width="160" height="16" style="border:1px solid #000000;"></canvas><br><br>
+							</div>
+							<div class="hide" id="tile-selector">
+								Tile:<br>
+								<canvas id="tile_select_canvas" width="144" height="16" style="border:1px solid #000000;"></canvas><br><br>
+							</div>
+							Brush Size:<br></b>
+							<input type="radio" id="d61-br-1" name="brush" value="1" checked> <label for="c1">1 x 1</label><br>
+							<input type="radio" id="d61-br-3" name="brush" value="3"> <label for="c2">3 x 3</label><br>
+							<input type="radio" id="d61-br-5" name="brush" value="5"> <label for="c3">5 x 5</label><br>
+							<input type="radio" id="d61-br-7" name="brush" value="7"> <label for="c4">7 x 7</label><br>
+							<input type="radio" id="d61-br-9" name="brush" value="9"> <label for="c5">9 x 9</label><br>
+						<td valign="top">
+							<b>Mines:</b><br>
+							<img src="images/Flag_R.png"> <input type="number" id="d61-m-R" value="60" min="0"><br>
+							<img src="images/Flag_RX.png"> <input type="number" id="d61-m-RX" value="0" min="0"><br>
+							<img src="images/Flag_G.png"> <input type="number" id="d61-m-G" value="0" min="0"><br>
+							<img src="images/Flag_GX.png"> <input type="number" id="d61-m-GX" value="0" min="0"><br>
+							<img src="images/Flag_B.png"> <input type="number" id="d61-m-B" value="0" min="0"><br>
+							<img src="images/Flag_BX.png"> <input type="number" id="d61-m-BX" value="0" min="0"><br><br>
+							<input type="checkbox" id="d61-fixed-pattern">Fixed Pattern<br>
+						<tr>
+						<td valign="top">
+							<b>Topology:</b><br>
+							<input type="radio" id="d61-top-00" name="topology" value="00" checked> <label for="c1">Plane</label><br>
+							<input type="radio" id="d61-top-10" name="topology" value="10"> <label for="c2">Cylinder X</label><br>
+							<input type="radio" id="d61-top-01" name="topology" value="01"> <label for="c3">Cylinder Y</label><br>
+							<input type="radio" id="d61-top-20" name="topology" value="20"> <label for="c4">M&ouml;bius Strip X</label><br>
+							<input type="radio" id="d61-top-02" name="topology" value="02"> <label for="c5">M&ouml;bius Strip Y</label><br>
+							<input type="radio" id="d61-top-11" name="topology" value="11"> <label for="c6">Torus</label><br>
+							<input type="radio" id="d61-top-12" name="topology" value="12"> <label for="c7">Klein Bottle XY</label><br>
+							<input type="radio" id="d61-top-21" name="topology" value="21"> <label for="c8">Klein Bottle YX</label><br>
+							<input type="radio" id="d61-top-22" name="topology" value="22"> <label for="c9">Real Projective Plane</label><br>
+						<td valign="top">
+							<b>Neighborhood:<br>
+							Type:<br>
+							<canvas id="count_canvas" width="80" height="16" style="border:1px solid #000000;"></canvas><br><br>
+							Small Mines: ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ Large Mines:<br>
+							<canvas id="small_mine_canvas" width="144" height="144" style="border:1px solid #000000;"></canvas>
+							<canvas id="large_mine_canvas" width="144" height="144" style="border:1px solid #000000;"></canvas><br>
+							</b>
+						<td valign="top">
+							<b>Display Style:</b><br>
+							<input type="radio" id="d61-disp-0" name="dispstyle" value="default" checked> <label for="c1">Default</label><br>
+							<input type="radio" id="d61-disp-1" name="dispstyle" value="colorcharge"> <label for="c2">Colorcharge</label><br>
+							<input type="radio" id="d61-disp-2" name="dispstyle" value="minusgb"> <label for="c3">R - (G + B)</label><br>
+							<br>
+							<b>Display Options:</b><br>
+							<input type="checkbox" id="d61-dec">Decrementing<br>
+							<input type="checkbox" id="d61-graymines">Gray Mines<br>
+						<tr>
+						<td valign="top">
+							<b>Animals:</b><br>
+							<input type="checkbox" id="d61-sheep">Sheep<br>
+							<input type="checkbox" id="d61-rat">Rat<br>
+							<input type="checkbox" id="d61-dog">Dog<br>
+							<input type="checkbox" id="d61-horse">Horse<br>
+							<br>
+							<input type="checkbox" id="d61-allowChord" checked>Allow Chording<br>
+						<td valign="top" colspan="2">
+							<b>Title:</b><br>
+							<input type="text" name="title" style="width: 400px" id="d61-title"><br><br>
+							<b>Author:</b><br>
+							<input type="text" name="author" style="width: 400px" id="d61-author"><br>
+						</table>
+						<b>Description:</b><br>
+						<textarea name="description" form="description" style="width: 700px; height: 200px" id="d61-description"></textarea><br><br>
+					</div>
+					<div class="out_blue" id="secd61-json">
+						<textarea name="json" form="json" style="width: 700px; height: 700px" id="d61-json"></textarea><br><br>
+						<b>Check Syntax:</b> <button type="button" class="greenbutton" id="checkJson">Check</button><br>
+						<span id="json-syntax-result"></span><br><br>
+					</div>
+					<div class="out_blue">
+						<p align="left">
+						Merry Christmas!<br>
+						Welcome to the 24th day of the advent calender, like in 2018 you can now create your own settings. Although this time around you get to have a bit more freedom with the settings you create. So how do you get started making your own setting?<br><br>
+						There are 3 menus for this day.<br>
+						<b>Play</b> lets you try out the custom setting that you've made.<br>
+						<b>Edit</b> gives you a bunch of options for how you can adjust the settings.<br>
+						<b>Json</b> lets you edit the JSON Data for the setting you are making. This is a less user friendly way to edit the settings, but can in some situations be more powerful. When you want to make something that the regular editor doesn't have an explicit option for.<br>
+						<br>
+						Once you are happy with your setting you can request a share link, this will upload the settings and give you a link directing to those settings, so other people can play them.<br>
+						For more detailed instructions on how to use the editor as well as some tips how you can replicate mechanics from other days, not available as options you can check the <a href="editor-guide.html">Editor Guide</a>.<br>
+						<br>
+						Special Thanks to Zettex for letting me use/modify some of their fraction tiles from <a href="https://weee50.github.io/mineday/6/">Mineday</a>.<br>
+						</p>
+					</div>
+				</center>
+			</div>
+		</div>
+		<div class="vscroll">
+			<center>	
+				<div id="description-welcome" class="out_blue"><p align="left">	
+					<font size="5"><b>Welcome to Myst's Minesveeper Collection!</b></font><br>
+					This is a collection of custom Minesveeper settings made by Mysthaps.
+					The collection is split into <i>two halves</i>, <b>A</b> and <b>B</b>. A-settings are normal Minesveeper styled settings, while B-settings are puzzles, similar to Minesveeper 68.<br><br>
+
+					The Heptaveegesimal Discord server: <a href="https://discord.com/invite/ZqEXjqB" class="buttonlink">Discord Server</a><br><br>
+
+					<font size="5"><b>Settings</b></font><br>
+				</p>
+				<p align="left"><br>
+					The controls for this game are adjusted when played on mobile. In the vast majority of situations this game should automatically detect if it is played on a mobile device.
+					However, in case that this detection fails. This option will let you manually switch between normal and mobile mode.<br><br>
+				</p>
+				<table align="left"><tr><td>
+					<b>Invert Mobile Detection</b><br><br>
+				<td class="tinygap">
+				<td>
+					<div id="switch-inv-mobile" class="switch-off"></div><br>
+				</table><br><br>
+				<p align="left"><br>
+					When you are in mobile mode an icon will appear fixed to the top left of your screen.
+					This serves as an always visible indicator, if you are in flag or dig mode and will also let you switch between the top, without needing to scroll the button on the side.
+					In case you do not want this icon and would rather just use the button like in older variants, this option will let you disable it.<br><br>
+				</p>
+				<table align="left"><tr><td>
+					<b>Disable Mode Icon</b><br><br>
+				<td class="tinygap">
+				<td>
+					<div id="switch-disable-shovel" class="switch-off"></div><br>
+				</table><br><br>
+				<div class="hide" id="d61-opt">
+				
+				</div>
+				<p align="left"><br>
+					Settings are persistently stored using local storage, this information is only stored on the client and is not sent to the server.
+					If you want to delete this information use the button below:<br>
+					<button id="delete-my-data" class="redbutton">Delete My Data</button><br><br>
+				</p></div>
+				<div id="description-day" class="hide out_blue"><p align="left">
+					...
+				</p></div>
+				<div id="description-patience" class="hide out_blue"><p align="left">
+					This game is not unlocked yet, please be patient.<br>
+					New games are unlocked at midnight central european time.<br>
+					If you are Periodle player: Yes Periodle is offset and will switch to the next day one hour earlier as it runs on summer time.<br>
+					<br>
+					If you are unsure on which day a setting will be unlocked subtract 37 to get the corresponding day of December (or enable the offset to 1 option in the settings). And if you live in America expect the Minesveeper variants to unlock in the evening of the day prior. Yes I have chosen to just put everyone on the same timezone, instead of messing with timezones and creating problems where some people would get to play a certain variant before it got unlocked for others.
+				</p></div>
+				<!-- <? if($day >= 31) { ?> Day 68 Desc -->
+				<div id="description-download" class="hide out_blue"><p align="left">
+				<b>You have reached the end of the 2023 Minesveeper advent calendar.</b><br>
+				Minesveeper will be returning in the future, but for now I want to focus on some other projects.<br>
+				But this is not about what I will do, this is about what you can do now.<br><br>
+				With the advent calendar now being over, I am hereby uploading the code for it so that if you want to make your own things based on it you can now do so.
+				I have prepared to separate Downloads based on what files you want.
+				First off is a smaller template you can use for coding your own setting and re-uploading it wherever you'd like.
+				In addition if you want to check the files for this page with all of the days you can play here as well as many other files you can download the full package instead.
+				This also comes with many off the textures as png files and various utility scripts I used while working on the advent calendar.<br>
+				</p><br>
+				<center>
+					<a href="https://heptaveegesimal.com/resources/phps/Download_File_By_Id.php?id=18" class="downloadlink">Reupload Template</a>
+					<a href="https://heptaveegesimal.com/resources/phps/Download_File_By_Id.php?id=19" class="downloadlink">Full Advent Calendar</a>
+				</center><br>
+				<p align="left">
+				You may use these however you like for any non-commercial purpose as long as credit is given to this advent calendar.<br><br>
+				<b>Getting Started</b>
+				For most cases I would recommend using the Reupload Template. Here you can unzip the files and open index.html with a browser of your choice and that's it you are now playing this custom setting locally.
+				To modify it you can edit <span class="code">js/mySettings.js</span> if you are familiar with the JSON representation for custom settings you will be at a significant advantage, if not it may be helpful to check how this works with Minesveeper 61 as well as checking the <a href="editor-guide.html">Editor Guide</a>.
+				So what's new?
+				Before you could use "copyFrom" instructions to use special features from some days. However, now you can freely code your own functions here.
+				To see how they work you can check the individual implementations of the days in the full version with all files.
+				Here is a quick overview of which functions can easily be set in the custom settings.
+				</p>
+				<div align="left">
+				<ul>
+					<li><span class="code">customFlagFunction</span> overwrites the default right click
+					<li><span class="code">customDigFunction</span> overwrites the default left click
+					<li><span class="code">postFlagFunction</span> will be executed after a flag was placed or removed
+					<li><span class="code">postGenFunction</span> will be executed after all mines were generated
+					<li><span class="code">preDigFunction</span> will be executed before a tile is dug up, through clicking or chording. (Warning: This is also executed if chording does not open any new tiles.)
+					<li><span class="code">entityEvents</span> allows you to implement an event listener for all events distributed to the entities on the board. The third parameter specifies the type of the event.
+					<li><span class="code">renderFunction</span> overwrites the default draw function for individual tiles.
+				</ul>
+				</div>
+				<p align="left">
+				Of course since you have access to the code of the game you can modify whatever default behavior you'd like.<br><br>
+				<b>Adding Your Own Textures</b><br>
+				Some ideas might require you to create your own textures or modify existing textures. All game textures are included as png files with the full download.
+				In most cases where you just want to add a new texture you can just add an extra line of code to load it.
+				However, if you want to modify existing textures, you should know that those aren't loaded from the png files.<br>
+				Instead they are encoded as Base64 (with some extra replacements for common character sequences) in <span class="code">js/b64.js</span>.
+				I would recommend to not manually add textures to this file and instead generate this file with the provided scripts.
+				Simply modify <span class="code">images/textureList</span> to include your new textures and use the python script <span class="code">images/MakeB64.py</span> to generate a new version of <span class="code">js/b64.js</span>.
+				Encoding images as Base64 in a script files avoids having to load a large amount of individual files. It also allows accessing image data within the code for local testing.
+				Where loading images from local png files would prevent accessing image data in some browsers.<br><br>
+				Have Fun!<br>
+				I'm curious to see what mechanics people will come up with using this.
+				<p>
+				</div>
+				<!-- <? } ?> -->
+				<br><br><br>
+			</center>
+		</div>
+	</div>
+	<!-- Overlay -->
+	<div id="grayBg" class="hide"></div>
+	<div id="overlayContainer">
+	<center>
+		<div id="warning-overlay" class="hide">
+			<div id="warning-content"></div><br><br>
+			<center><button type="button" class="daybutton_active" id="warning-got-it" style="width:120px;">Got It!</button></center>
+		</div>
+		<div id="choice-overlay" class="hide">
+			<div id="choice-content"></div><br><br>
+			<center>
+				<button type="button" class="daybutton_active" id="choice-cancel" style="width:140px;">Cancel</button>
+				<button type="button" class="daybutton_active" id="choice-continue" style="width:140px;">Continue</button>
+			</center>
+		</div>
+	</center>
+	</div>
+	<div class="hide" style="position:fixed;top:10px;left:10px;" id="mobile-indicator-sec"><img id="mobile-indicator-img" src="images/Shovel.png" style="height:32px;image-rendering:pixelated;"></div>
+	<!-- Scripts -->
+	<!-- <? if(false) { ?> -->
+	<div id="daycodes" class="hide" codes="3zjtv7CLCA67DTl0yfaZwqF-5NWkizpiHgIDo45xzNRy4iYO7IcKKPklbs-fAr54AK33Lt6tJEeJM-ZvmjQDu_OYmfAXsQxPZvJCAisqxQFnuSjWZhnhUrcRkXKkpahYkWIQJa_ftS3XEFXt7ndmFE-gbRQ_iI5I4-LaAldDBLAQZXmXrzPv4CiWKg"></div>
+	<!--<div id="daycodes" class="hide" codes="3zjtv7CLCA67DTl0yfaZwqF-5NWkizpiHgID" />-->
+	<script language="javascript" type="text/javascript" src="menu.js"></script>
+	<script language="javascript" type="text/javascript" src="init.js"></script>
+	<!-- <? } else {
+	$allCodes = "3zjtv7CLCA67DTl0yfaZwqF-5NWkizpiHgIDo45xzNRy4iYO7IcKKPklbs-fAr54AK33Lt6tJEeJM-ZvmjQDu_OYmfAXsQxPZvJCAisqxQFnuSjWZhnhUrcRkXKkpahYkWIQJa_ftS3XEFXt7ndmFE-gbRQ_iI5I4-LaAldDBLAQZXmXrzPv4CiWKg";
+	echo $htmlClose; ?>
+	<div id="daycodes" class="hide" codes="<? echo substr($allCodes, 0, $day * 6); ?>" ></div>
+	<script language="javascript" type="text/javascript" src="menu.js?v=<? echo $versionNumber; ?>"></script>
+	<script language="javascript" type="text/javascript" src="init.js?v=<? echo $versionNumber; ?>"></script>
+	<? echo $htmlOpen; } ?> -->
+</body>
+</html>
