@@ -101,6 +101,27 @@ let activeEntities = [];
 		//console.log([dx, dy]);
 	};
 	
+	let shoopAI = (e, i, j, ev) => {
+		if(ev != Entities.events.digOrChord) return;
+		let dog = findEntity("dog");
+		if(dog != null){
+			let ddx = e.x - dog.x;
+			let ddy = e.y - dog.y;
+			for(let dd of shape.dogEffect){
+				if(ddx == dd[0] && ddy == dd[1]) return;
+			}
+		}
+		let dx = -(i - e.x);
+		let dy = -(j - e.y);
+		let t = basicMove(e, dx, dy);
+		if((t == null) || t.open) return;
+		setFlag(e.x, e.y, "");
+		t.open = true;
+		if(t.surroundingMines.length != 0 || t.mine != "") return;
+		openSurrounding(e.x, e.y);
+		//console.log([dx, dy]);
+	};
+	
 	let ratAI = (e, i, j, ev) => {	
 		if(ev != Entities.events.digOrChord) return;
 		let cheese = findEntity("cheese");
@@ -229,6 +250,7 @@ let activeEntities = [];
 			if(e.x == e2.x && e.y == e2.y){
 				switch(e2.type){
 					case "sheep":
+					case "shoop":
 					case "rat":
 					case "dog":
 					case "horse":
@@ -259,6 +281,10 @@ let activeEntities = [];
 			case "sheep":	
 				E.texture = Textures.entities.sheep;
 				E.ai = sheepAI;
+				break;
+		    case "shoop":	
+				E.texture = Textures.entities.shoop;
+				E.ai = shoopAI;
 				break;
 			case "rat":
 				E.texture = Textures.entities.rat;

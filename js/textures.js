@@ -30,6 +30,7 @@ var Textures = {
 	},
 	entities : {
 		sheep : null,
+		shoop : null,
 		rat: null,
 		cheese: null,
 		dog: null,
@@ -130,6 +131,7 @@ var Textures = {
 	Textures.background.clearGrayscale = loadTexture("grayscale/Ground.png", null);
 
 	Textures.entities.sheep = loadTexture("entities/Sheep.png", null);
+	Textures.entities.shoop = loadTexture("entities/Shoop.png", null);
 	Textures.entities.rat = loadTexture("entities/Rat.png", null);
 	Textures.entities.cheese = loadTexture("entities/Cheese.png", null);
 	Textures.entities.dog = loadTexture("entities/Dog.png", null);

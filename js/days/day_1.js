@@ -1,45 +1,164 @@
 registerDay(1, 
 {
-    "title" : "Mystsveeper 1A - Bullet Hell (Extra Stage)",
-    "desc" : "<b>Minesveeper 60 - Bullet Hell</b>, but bullets are spawned independently of your clicks.<br><br>"
-           + "The longer you take, the more bullets accumulate!",
+    "title" : "Minepersvee 1 - Largely Against Following You",
+    "desc" : "The first Minepersvee! Woo!<br><br>"
+           + "When Day 61 began, my first custom variant was just a simple one featuring just Large and Anti Mines. It was nothing special.<br>"
+		   + "But today, we're adding a new entity to the mix, the Shoop! It's an anti-Sheep so whatever the direction the sheep moves, the shoop moveas the <b>opposite</b> direction.<br>"
+		   + "Also, to minimize guessing, I made the Anti Mines <b>double</b> so yeah.",
     "mines" : {
-        "R" : 40
+        "RX" : 30,
+		"B": 30
     },
-    "grayMines" : true,
-    "display" : "default",
-    "shape" : "default",
+    "grayMines" : false,
+    "display" : "minusgb",
+    "shape": {
+  "small": [
+   [
+    -1,
+    -1,
+    "bb"
+   ],
+   [
+    -1,
+    0,
+    "bb"
+   ],
+   [
+    -1,
+    1,
+    "bb"
+   ],
+   [
+    0,
+    -1,
+    "bb"
+   ],
+   [
+    0,
+    1,
+    "bb"
+   ],
+   [
+    1,
+    -1,
+    "bb"
+   ],
+   [
+    1,
+    0,
+    "bb"
+   ],
+   [
+    1,
+    1,
+    "bb"
+   ]
+  ],
+  "large": [
+   [
+    1,
+    -1
+   ],
+   [
+    0,
+    -1
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    -1,
+    1
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    -1,
+    -1
+   ],
+   [
+    -1,
+    0
+   ],
+   [
+    -2,
+    -2
+   ],
+   [
+    -2,
+    -1
+   ],
+   [
+    -2,
+    0
+   ],
+   [
+    -2,
+    1
+   ],
+   [
+    -2,
+    2
+   ],
+   [
+    -1,
+    2
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    2,
+    -1
+   ],
+   [
+    2,
+    -2
+   ],
+   [
+    1,
+    -2
+   ],
+   [
+    0,
+    -2
+   ],
+   [
+    -1,
+    -2
+   ]
+  ]
+ },
     "decrementing" : false,
-    "x" : 26,
-    "y" : 26,
-    "disableChord" : true,
-    "spawn" : ["sheep"],
-    "board" : "0FSKM/709+f6ACEAEATd5Uw",
-    "timeCycleFunction": function(){
-        let n = (Math.random() > 0.95 ? 2 : (Math.random() > 0.7) ? 1 : 0);
-        for(let i = 0; i < n; i++){
-            switch(Math.floor(Math.random() * 4)){
-                case 0:
-                    x = 0;
-                    y = 3 + Math.floor(Math.random() * (board.y - 6));
-                    break;
-                case 1:
-                    x = 3 + Math.floor(Math.random() * (board.x - 6));
-                    y = 0;
-                    break;
-                case 2:
-                    x = board.x - 1;
-                    y = 3 + Math.floor(Math.random() * (board.y - 6));
-                    break;
-                case 3:
-                    x = 3 + Math.floor(Math.random() * (board.x - 6));
-                    y = board.y - 1;
-                    break;
-            }
-            Entities.spawn("projectile", x, y);
-        }
-    },
-    "cycleDelay": 10
+    "x" : 24,
+    "y" : 24,
+    "board": "0A/z/v+cP//pw",
+	"spawn":[
+	  "shoop"
+	]
 });
-    
     

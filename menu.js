@@ -16,26 +16,15 @@ var addOnLoadEvent = null;
 			"content" : [
 				//["Periodle", "https://heptaveegesimal.com/periodle/", true],
 				//["Minesveeper", "https://heptaveegesimal.com/2023/advent-calendar", true],
-				["0", "https://heptaveegesimal.com/2022/minesveeper-zero", false],
-				["1 - 24", "https://heptaveegesimal.com/2018/advent-calendar", false],
-				["25 - 31", "https://heptaveegesimal.com/2018/advent-calendar/bonus-days.php", false],
-				["32", "https://heptaveegesimal.com/2019/carbonnanosweeper/", false],
-				["33 - 35", "https://heptaveegesimal.com/2019/graphsveeper/", false],
-				["38 - 61", "https://heptaveegesimal.com/2023/advent-calendar/", false],
+				["0", "https://heptaveegesimal.com/2022/minesveeper-zero", true],
+				["1 - 24", "https://heptaveegesimal.com/2018/advent-calendar", true],
+				["25 - 31", "https://heptaveegesimal.com/2018/advent-calendar/bonus-days.php", true],
+				["32", "https://heptaveegesimal.com/2019/carbonnanosweeper/", true],
+				["33 - 35", "https://heptaveegesimal.com/2019/graphsveeper/", true],
+				["38 - 61", "https://heptaveegesimal.com/2023/advent-calendar/", true],
+				["Discord Server", "https://discord.com/invite/ZqEXjqB", true],
 				//["VVOVOV", "https://heptaveegesimal.com/vvovov.html", true],
 				//["OpenCYOA", "https://heptaveegesimal.com/opencyoa/", true],
-			]
-		},
-		"dd2": {
-			"buttonText" : "Other Links",
-			"content" : [
-				["Discord", "https://discord.com/invite/ZqEXjqB", true],
-				["Github", "https://github.com/JoshuaGehre", true],
-				["YouTube", "https://www.youtube.com/@joshuagetusername4779/videos", true],
-				["VVVVVV - Levels", null, true],
-				["Vespera Scientifica", "https://distractionware.com/forum/index.php?topic=4200.0", false],
-				["Villibrot", "https://distractionware.com/forum/index.php?topic=3772.0", false],
-				["A4A4A4", "https://distractionware.com/forum/index.php?topic=3649.0", false],
 			]
 		},
 	};
