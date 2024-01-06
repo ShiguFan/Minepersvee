@@ -3,7 +3,7 @@ registerDay(1,
     "title" : "Minepersvee 1 - Largely Against Following You",
     "desc" : "The first Minepersvee! Woo!<br><br>"
            + "When Day 61 began, my first custom variant was just a simple one featuring just Large and Anti Mines. It was nothing special.<br>"
-		   + "But today, we're adding a new entity to the mix, the Shoop! It's an anti-Sheep so whatever the direction the sheep moves, the shoop moves the <b>opposite</b> direction.<br>"
+		   + "But today, we're adding a new entity to the mix, the Shoop! It's an anti-Sheep so whatever the direction the sheep moves, the shoop move    s the <b>opposite</b> direction.<br>"
 		   + "Also, to minimize guessing, I made the Anti Mines <b>double</b> so yeah.",
     "mines" : {
         "RX" : 30,
@@ -159,6 +159,31 @@ registerDay(1,
     "board": "0A/z/v+cP//pw",
 	"spawn":[
 	  "shoop"
-	]
+	],
+	"timeCycleFunction": function(){
+        let n = 1;
+        for(let i = 0; i < n; i++){
+            switch(Math.floor(Math.random() * 4)){
+                case 0:
+                    x = 0;
+                    y = Math.floor(Math.random() * (board.y));
+                    break;
+                case 1:
+                    x = Math.floor(Math.random() * (board.x));
+                    y = 0;
+                    break;
+                case 2:
+                    x = board.x - 1;
+                    y = Math.floor(Math.random() * (board.y));
+                    break;
+                case 3:
+                    x = Math.floor(Math.random() * (board.x));
+                    y = board.y - 1;
+                    break;
+            }
+            Entities.spawn("projectile", x, y);
+        }
+    },
+    "cycleDelay": 10
 });
     

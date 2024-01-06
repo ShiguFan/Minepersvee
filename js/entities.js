@@ -260,6 +260,22 @@ let activeEntities = [];
 			}
 		}
 	};
+	
+	let obstacleAI = (e, i, j, ev) => {
+		for(let e2 of Entities.active){
+			if(e.x == e2.x && e.y == e2.y){
+				switch(e2.type){
+					case "sheep":
+					case "shoop":
+					case "rat":
+					case "dog":
+					case "horse":
+						explode();
+						break;
+				}
+			}
+		}
+	};
 
 	let placingCycle = 0;
 
@@ -318,6 +334,10 @@ let activeEntities = [];
 				}
 				E.ai = projectileAI;
 				E.texture = Textures.entities.projectile[E.direction];
+				break;
+			case "obstacle":
+				E.ai = obstacleAI;
+				E.texture = Textures.entities.obstacle;
 				break;
 			default:
 				console.log("Unknown Entity: " + name);
