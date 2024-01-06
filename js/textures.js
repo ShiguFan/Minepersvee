@@ -37,6 +37,7 @@ var Textures = {
 		ball: null,
 		horse: null,
 		projectile: [],
+		obstacle: null,
 	},
 	edit : {
 		select: null,
@@ -141,6 +142,7 @@ var Textures = {
 	Textures.entities.projectile[1] = loadTexture("entities/Projectile_Down.png", null);
 	Textures.entities.projectile[2] = loadTexture("entities/Projectile_Left.png", null);
 	Textures.entities.projectile[3] = loadTexture("entities/Projectile_Up.png", null);
+	Textures.entities.obstacle = loadTexture("entities/Obstacle.png", null);
 
 	Textures.background.fractions.epsilon = loadTexture("numbers/num_epsilon.png", null);
 	Textures.background.fractions.frac_1_8 = loadTexture("numbers/num_frac_1_8.png", null);
