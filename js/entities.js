@@ -262,6 +262,7 @@ let activeEntities = [];
 	};
 	
 	let obstacleAI = (e, i, j, ev) => {
+		if(ev != Entities.events.digOrChord) return;
 		for(let e2 of Entities.active){
 			if(e.x == e2.x && e.y == e2.y){
 				switch(e2.type){
