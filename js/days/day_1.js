@@ -181,9 +181,9 @@ registerDay(1,
                     y = board.y - 1;
                     break;
             }
-            Entities.spawn("projectile", x, y);
-        }
-    },
-    "cycleDelay": 10
+            Entities.spawn("obstacle", x, y);
+        },
+    "cycleDelay": 0
+    }
 });
     
