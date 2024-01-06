@@ -3,11 +3,11 @@ registerDay(1,
     "title" : "Minepersvee 1 - Largely Against Following You",
     "desc" : "The first Minepersvee! Woo!<br><br>"
            + "When Day 61 began, my first custom variant was just a simple one featuring just Large and Anti Mines. It was nothing special.<br>"
-		   + "But today, we're adding a new entity to the mix, the Shoop! It's an anti-Sheep so whatever the direction the sheep moves, the shoop move    s the <b>opposite</b> direction.<br>"
-		   + "Also, to minimize guessing, I made the Anti Mines <b>double</b> so yeah.",
+		   + "But today, we're adding a new entity to the mix, the Shoop! It's an anti-Sheep so whatever the direction the sheep moves, the shoop moves the <b>opposite</b> direction.<br>"
+		   + "Also, to minimize guessing, I made the Large Mines <b>double</b> so yeah.",
     "mines" : {
-        "RX" : 30,
-		"B": 30
+        "RX" : 35,
+		"B": 35
     },
     "grayMines" : false,
     "display" : "minusgb",
@@ -169,7 +169,7 @@ registerDay(1,
    ]
   ]
  },
-    "decrementing" : false,
+    "decrementing" : true,
     "x" : 26,
     "y" : 26,
     "board": "70/6M/9ARZ6VHP8AaACiAC98xDQ",
